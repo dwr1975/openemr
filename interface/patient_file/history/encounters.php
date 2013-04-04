@@ -15,6 +15,7 @@ $fake_register_globals=false;
 require_once("../../globals.php");
 require_once("$srcdir/forms.inc");
 require_once("$srcdir/billing.inc");
+require_once("$srcdir/pnotes.inc");
 require_once("$srcdir/patient.inc");
 require_once("$srcdir/lists.inc");
 require_once("$srcdir/acl.inc");
@@ -485,6 +486,7 @@ while ($result4 = sqlFetchArray($res4)) {
           } // end if (!$issue)
 
             // show encounter reason/title
+            $reason_string=nl2br($reason_string);
             echo "<td>".$reason_string;
             echo "<div style='padding-left:10px;'>";
 

@@ -15,10 +15,10 @@ include_once($GLOBALS["srcdir"] . "/api.inc");
 //
 function lbf_report($pid, $encounter, $cols, $id, $formname) {
   require_once($GLOBALS["srcdir"] . "/options.inc.php");
-  echo "<table>\n";
+    echo "<table>\n";
 
   $arr = array();
-  $fres = sqlStatement("SELECT field_id, field_value FROM lbf_data WHERE form_id = ?", array($id) );
+  $fres = sqlStatement("SELECT field_id, field_value FROM lbf_data WHERE form_id = '$id'");
   while ($frow = sqlFetchArray($fres)) {
     $arr[$frow['field_id']] = $frow['field_value'];
   }
@@ -27,3 +27,4 @@ function lbf_report($pid, $encounter, $cols, $id, $formname) {
   echo "</table>\n";
 }
 ?>
+

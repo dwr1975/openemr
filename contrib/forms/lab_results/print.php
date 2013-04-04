@@ -15,7 +15,7 @@ formHeader("Lab Results");
 <head>
 <?php html_header_show();?>
 
-<title>New Patient Encounter</title>
+<title>Lab Results</title>
 
 </head>
 
@@ -23,13 +23,35 @@ formHeader("Lab Results");
 
 <br><br>
 
+<form method='post' action="<?php echo $rootdir;?>/forms/lab_results/save.php?mode=new" name='lab_results_form' enctype="multipart/form-data">
+
+<span class=title>Lab Results</span>
+
+<br>
+
+<span class=text>Notes:</span><br>
+
+<textarea name="notes" wrap="virtual" cols="45" rows="10">
 <?php
 
 $row = formFetch('form_lab_results', $_GET['id']);
 
-echo $row['notes'];
+// I added this
+{
+	foreach($row as $row);
+	$row=($row);
+	
+}
+// end of what I added
+
+echo $row;
+
+
+
 
 ?>
+
+</textarea>
 
 <br><br>
 
@@ -42,4 +64,16 @@ echo $row['notes'];
 formFooter();
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
 
