@@ -15,7 +15,7 @@ formHeader("Lab Results");
 <head>
 <?php html_header_show();?>
 
-<title>Lab Results</title>
+<title>Edit Lab Results</title>
 
 </head>
 
@@ -25,7 +25,7 @@ formHeader("Lab Results");
 
 <form method='post' action="<?php echo $rootdir;?>/forms/lab_results/save.php?mode=new" name='lab_results_form' enctype="multipart/form-data">
 
-<span class=title>Lab Results</span>
+<span class=title>Edit Lab Results</span>
 
 <br>
 
@@ -36,18 +36,7 @@ formHeader("Lab Results");
 
 $row = formFetch('form_lab_results', $_GET['id']);
 
-// I added this
-{
-	foreach($row as $row);
-	$row=($row);
-	
-}
-// end of what I added
-
-echo $row;
-
-
-
+echo $row['notes'];
 
 ?>
 
@@ -64,16 +53,3 @@ echo $row;
 formFooter();
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
